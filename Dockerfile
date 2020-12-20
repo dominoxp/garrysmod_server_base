@@ -11,3 +11,5 @@ RUN mkdir -p ${GMODDIR} && chown steam:steam ${GMODDIR} -R && \
 RUN su steam -c "${STEAMCMDDIR}/steamcmd.sh +login anonymous +force_install_dir ${GMODDIR} +app_update 4020 validate +force_install_dir ${CSS} +app_update 232330 validate +quit"
 
 VOLUME ["${GMODDIR}/garrysmod/addons", "${GMODDIR}/garrysmod/data", "${GMODDIR}/garrysmod/cache"]
+
+RUN chown steam:steam ${GMODDIR}
